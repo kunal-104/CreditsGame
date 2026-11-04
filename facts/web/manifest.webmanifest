@@ -1,0 +1,11 @@
+{
+  "name": "Curio: Fact or Myth",
+  "short_name": "Curio",
+  "description": "A few minutes a day of surprising facts about countries, science, history and more.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7f2",
+  "theme_color": "#ff6b3d",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

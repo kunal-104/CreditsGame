@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Curio</title>
+  <meta name="description" content="Curio: a few minutes a day of surprising facts about countries, science, history and more. Swipe Fact or Myth, see why, and go deeper with Wikipedia.">
+  <meta name="theme-color" content="#ff6b3d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="backBtn" aria-label="Back" hidden>
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <a class="brand" href="#/">curio<span>.</span></a>
+    <span class="spacer"></span>
+    <span class="pill" id="streakPill" title="Daily streak">🔥 0</span>
+    <span class="pill" id="xpPill" title="Experience">⭐ 0</span>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <nav class="tabbar" id="tabbar">
+    <a href="#/" data-tab="today"><span>☀️</span>Today</a>
+    <a href="#/explore" data-tab="explore"><span>🧭</span>Explore</a>
+    <a href="#/passport" data-tab="passport"><span>🛂</span>Passport</a>
+    <a href="#/live" data-tab="live"><span>📡</span>Live</a>
+    <a href="#/me" data-tab="me"><span>👤</span>Me</a>
+  </nav>
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+  <noscript>Curio needs JavaScript to run.</noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

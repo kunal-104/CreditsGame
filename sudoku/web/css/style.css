@@ -250,3 +250,5 @@ th:first-child, td:first-child { text-align: left; }
   main.game { max-width: 900px; }
   .sheet { position: static; animation: none; box-shadow: var(--shadow); border-radius: var(--radius); max-height: none; margin-top: 12px; }
 }
+
+[hidden] { display: none !important; }
