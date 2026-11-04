@@ -1,0 +1,388 @@
+{
+  "stages": [
+    { "level": 1, "name": "Beginner", "tagline": "Learn the rules and find your first digits" },
+    { "level": 2, "name": "Easy", "tagline": "Scan every row and column, and start using notes" },
+    { "level": 3, "name": "Medium", "tagline": "Use boxes and lines to rule digits out" },
+    { "level": 4, "name": "Hard", "tagline": "Spot pairs and triples that lock digits in place" },
+    { "level": 5, "name": "Expert", "tagline": "Find patterns that span the whole grid" },
+    { "level": 6, "name": "Master", "tagline": "Use colouring, uniqueness and advanced fish" },
+    { "level": 7, "name": "Grandmaster", "tagline": "Follow chains of logic across the board" }
+  ],
+  "lessons": [
+    {
+      "id": "rules",
+      "level": 1,
+      "title": "The Rules",
+      "tech": null,
+      "summary": "Fill the grid so every row, column and box contains 1 to 9 exactly once.",
+      "body": [
+        "A Sudoku grid has 81 cells arranged in 9 rows, 9 columns and 9 boxes of 3×3.",
+        "Some cells are already filled. These are the givens, and you cannot change them.",
+        "Your goal: fill every empty cell with a digit from 1 to 9 so that each row, each column and each box contains every digit exactly once.",
+        "A well-made Sudoku has exactly one solution and never needs guessing. Every digit can be found by logic, and this Academy teaches you that logic one technique at a time.",
+        "Cells are named by row and column. R3C7 means row 3, column 7. Boxes are numbered 1 to 9 from the top-left, reading like a book."
+      ],
+      "tip": "Rows, columns and boxes are all called units. Each cell belongs to exactly three units.",
+      "keyIdea": "Each digit appears exactly once in every row, column and box."
+    },
+    {
+      "id": "full_house",
+      "level": 1,
+      "title": "Full House",
+      "tech": "full_house",
+      "summary": "When a unit has only one empty cell, the missing digit goes there.",
+      "body": [
+        "This is the easiest move in Sudoku. Look for a row, column or box with eight digits already filled.",
+        "Only one digit is missing, and only one cell is empty, so the missing digit goes in that cell.",
+        "Near the end of a puzzle, full houses appear everywhere. Finish them quickly and use them to open up new moves."
+      ],
+      "tip": "Count the empty cells in each unit. If a unit has only one, that's a full house.",
+      "keyIdea": "One empty cell + one missing digit = solved.",
+      "task": "Tap the cell you can fill."
+    },
+    {
+      "id": "hidden_single_box",
+      "level": 1,
+      "title": "Hidden Single in a Box",
+      "tech": "hidden_single_box",
+      "summary": "Cross-hatch: rule out cells in a box until one place is left for a digit.",
+      "body": [
+        "Pick a digit, say 5, and pick a box that doesn't have a 5 yet.",
+        "Look at the 5s already in the rows and columns that pass through the box. Each one blocks its whole row or column inside the box.",
+        "Also skip cells that are already filled. If only one cell in the box is left unblocked, the 5 must go there.",
+        "This is called cross-hatching, and it's the most important skill in Sudoku. Experts do it in seconds by checking one digit at a time across all nine boxes."
+      ],
+      "tip": "Start with the digit that already appears most often on the board. It blocks the most cells.",
+      "keyIdea": "A digit with only one possible place in a box goes there.",
+      "task": "Tap the cell where the highlighted box must place its digit."
+    },
+    {
+      "id": "hidden_single_line",
+      "level": 2,
+      "title": "Hidden Single in a Row or Column",
+      "tech": "hidden_single_line",
+      "summary": "The same idea as in a box, applied to a row or column.",
+      "body": [
+        "Hidden singles also happen in rows and columns. Choose a row and a digit that is missing from it.",
+        "For each empty cell in the row, check whether that digit already appears in the cell's column or box. If it does, the cell is blocked.",
+        "If only one cell in the row is left unblocked, the digit goes there.",
+        "Rows and columns are harder to scan than boxes because the cells are spread across three boxes. Take it slowly at first."
+      ],
+      "tip": "Rows that are already half full are the best place to look.",
+      "keyIdea": "Every row and column needs every digit, so a digit with only one place goes there.",
+      "task": "Tap the cell where the digit must go."
+    },
+    {
+      "id": "notes",
+      "level": 2,
+      "title": "Pencil Marks (Notes)",
+      "tech": null,
+      "summary": "Write down every digit a cell could still be. Advanced techniques all work on these notes.",
+      "body": [
+        "When scanning stops working, switch to notes. In each empty cell, write every digit that doesn't already appear in its row, column or box. These are the cell's candidates.",
+        "Turn on Notes mode with the pencil button (or press N), then tap digits to add or remove them.",
+        "Each time you place a digit, remove it from the notes of every cell in the same row, column and box. The app can do this for you automatically.",
+        "From the Medium level on, every technique works on candidates: it either finds a cell with one candidate left, or proves that some candidates are impossible and removes them."
+      ],
+      "tip": "Use Auto Notes to fill in all candidates at once, then focus on the logic, not the bookkeeping.",
+      "keyIdea": "Candidates are the digits a cell could still be. Solving means removing them until one is left."
+    },
+    {
+      "id": "naked_single",
+      "level": 2,
+      "title": "Naked Single",
+      "tech": "naked_single",
+      "summary": "A cell with only one candidate left must be that digit.",
+      "body": [
+        "Look at a single cell and list the digits that already appear in its row, its column and its box.",
+        "If eight different digits are ruled out, only one is left. That digit goes in the cell.",
+        "With notes on, naked singles are easy to see: they're cells showing a single small digit."
+      ],
+      "tip": "Cells at the crossing of a busy row and a busy column are the best places to look.",
+      "keyIdea": "Eight digits ruled out leaves only one.",
+      "task": "Tap the cell with only one possible digit."
+    },
+    {
+      "id": "pointing",
+      "level": 3,
+      "title": "Pointing Pairs and Triples",
+      "tech": "pointing",
+      "summary": "If a digit in a box is limited to one row or column, remove it from the rest of that line.",
+      "body": [
+        "Look at one box and one digit. Sometimes all the candidates for that digit in the box sit in the same row (or column).",
+        "You don't know which cell it is yet, but you do know the box's digit will be in that row.",
+        "That means the row's copy of the digit is used up inside this box, so the digit can be removed from every other cell of the row outside the box.",
+        "The candidates point along the line, and every cell they point to loses the digit."
+      ],
+      "tip": "Pointing usually doesn't place a digit right away. It removes candidates, which often reveals a single a moment later.",
+      "keyIdea": "Box candidates in one line remove that digit from the rest of the line.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "claiming",
+      "level": 3,
+      "title": "Box/Line Claiming",
+      "tech": "claiming",
+      "summary": "If a digit in a row or column is limited to one box, remove it from the rest of that box.",
+      "body": [
+        "This is pointing in reverse. Look at a row or column and one digit. If all its candidates for that digit are inside a single box, the line claims the digit for that box.",
+        "The line's copy of the digit will end up in that box, so no other cell of the box can hold it.",
+        "Remove the digit from the box's other cells."
+      ],
+      "tip": "Pointing goes from a box to a line, and claiming goes from a line to a box. Look for both whenever you study one digit.",
+      "keyIdea": "Line candidates in one box remove that digit from the rest of the box.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "naked_pair",
+      "level": 4,
+      "title": "Naked Pairs",
+      "tech": "naked_pair",
+      "summary": "Two cells in a unit with the same two candidates use up those two digits.",
+      "body": [
+        "Find two cells in the same row, column or box that both have exactly the same two candidates, for example {3,7}.",
+        "One of them will be 3 and the other 7. You don't know which way round yet, but together they use up both digits.",
+        "So 3 and 7 can be removed from every other cell in that unit.",
+        "If the two cells share both a line and a box, remove the digits from both units."
+      ],
+      "tip": "Look for cells with exactly two candidates. They're the building blocks of most advanced techniques.",
+      "keyIdea": "N cells with the same N candidates use up those digits.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "hidden_pair",
+      "level": 4,
+      "title": "Hidden Pairs",
+      "tech": "hidden_pair",
+      "summary": "Two digits that can only go in the same two cells clear out every other candidate in those cells.",
+      "body": [
+        "In a unit, find two digits that each have only two possible places, and the places are the same two cells.",
+        "Those two cells must hold those two digits, so any other candidates in them can be removed.",
+        "It's called hidden because the cells may hold many other candidates that make the pair hard to see. Once you clean them up, it becomes a naked pair."
+      ],
+      "tip": "For each unit, count how many places each missing digit has. Digits with two places are the ones to check.",
+      "keyIdea": "Two digits limited to the same two cells claim those cells.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "naked_triple",
+      "level": 4,
+      "title": "Naked Triples",
+      "tech": "naked_triple",
+      "summary": "Three cells whose candidates come from only three digits use up those digits.",
+      "body": [
+        "A naked triple is three cells in a unit whose candidates, taken together, are only three digits.",
+        "Not every cell needs all three digits. {1,4}, {4,8} and {1,8} is a valid naked triple.",
+        "Those three digits must fill those three cells, so remove them from the rest of the unit."
+      ],
+      "tip": "Combining cells with two or three candidates is the quickest way to find triples.",
+      "keyIdea": "Three cells, three digits in total, so they're locked.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "hidden_triple",
+      "level": 4,
+      "title": "Hidden Triples",
+      "tech": "hidden_triple",
+      "summary": "Three digits limited to the same three cells clear out every other candidate in those cells.",
+      "body": [
+        "In a unit, find three digits whose possible places, taken together, are only three cells.",
+        "Those three cells must hold those three digits. Remove every other candidate from them.",
+        "Hidden triples are rare and easy to miss, so finding one is a sign of strong technique."
+      ],
+      "tip": "If a unit has many empty cells but a few digits with very few places, look there.",
+      "keyIdea": "Three digits squeezed into three cells claim those cells.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "x_wing",
+      "level": 5,
+      "title": "X-Wing",
+      "tech": "x_wing",
+      "summary": "Two rows where a digit fits in the same two columns remove that digit from the rest of those columns.",
+      "body": [
+        "Choose a digit. Find two rows where that digit has exactly two possible cells, in the same two columns.",
+        "The four cells form a rectangle. Each row needs its digit, and the two rows can't use the same column, so the digits must sit on one diagonal of the rectangle or the other.",
+        "Either way, both columns get their copy of the digit from these two rows.",
+        "So the digit can be removed from every other cell in those two columns. The same works with rows and columns swapped."
+      ],
+      "tip": "Check one digit at a time and note the rows where it has exactly two places.",
+      "keyIdea": "Two lines, two positions each, same cross-lines, so the cross-lines are covered.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "skyscraper",
+      "level": 5,
+      "title": "Skyscraper",
+      "tech": "skyscraper",
+      "summary": "An X-Wing that is off by one cell still makes eliminations.",
+      "body": [
+        "Find two rows where a digit has exactly two places each. Two of those cells (the bases) are in the same column. The other two (the tops) are not.",
+        "The two bases share a column, so at most one of them can be the digit. That means at least one of the rows has its digit at the top.",
+        "Any cell that sees both tops can't be the digit.",
+        "Picture two towers standing on the same street, with roofs at different heights."
+      ],
+      "tip": "If you find an almost X-Wing, check whether it's a skyscraper.",
+      "keyIdea": "At least one of the two tops is true, so cells seeing both tops are not.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "two_string_kite",
+      "level": 5,
+      "title": "2-String Kite",
+      "tech": "two_string_kite",
+      "summary": "A row and a column joined through a box remove one candidate.",
+      "body": [
+        "Find a row where a digit has exactly two places, and a column where the same digit has exactly two places.",
+        "One end of the row and one end of the column must be in the same box (but not the same cell). At most one of them can be the digit.",
+        "So at least one of the far ends is the digit. The cell where the far end's row meets the other far end's column sees both, so it can't be the digit."
+      ],
+      "tip": "These two strings, tied together in one box, look like the frame of a kite.",
+      "keyIdea": "One of the far ends must be true, so the cell seeing both is false.",
+      "task": "Tap the cell that loses a candidate."
+    },
+    {
+      "id": "xy_wing",
+      "level": 5,
+      "title": "XY-Wing",
+      "tech": "xy_wing",
+      "summary": "Three two-candidate cells guarantee that one of two cells is Z.",
+      "body": [
+        "Find a pivot cell with two candidates, X and Y.",
+        "Find two cells that each see the pivot (the wings): one with {X,Z} and one with {Y,Z}.",
+        "If the pivot is X, the first wing must be Z. If the pivot is Y, the second wing must be Z. Either way, one wing is Z.",
+        "Any cell that sees both wings can't be Z."
+      ],
+      "tip": "Start at a two-candidate cell and look for two-candidate cells it can see that share one digit each.",
+      "keyIdea": "Pivot {X,Y}, wings {X,Z} and {Y,Z}, so Z goes in one of the wings.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "naked_quad",
+      "level": 5,
+      "title": "Naked Quads",
+      "tech": "naked_quad",
+      "summary": "Four cells with only four candidates between them use up those digits.",
+      "body": [
+        "This is the same idea as pairs and triples, applied to four cells: four cells in a unit whose candidates together are only four digits.",
+        "Those digits must fill those cells, so remove them from the rest of the unit.",
+        "Quads are rare. When a unit has eight empty cells, a naked quad also means the other four cells form a hidden quad."
+      ],
+      "tip": "Search only units with many empty cells. Smaller units will show a pair or triple instead.",
+      "keyIdea": "Four cells, four digits in total, so they're locked.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "xyz_wing",
+      "level": 6,
+      "title": "XYZ-Wing",
+      "tech": "xyz_wing",
+      "summary": "An XY-Wing whose pivot also holds Z.",
+      "body": [
+        "This time the pivot has three candidates {X,Y,Z}, and the wings are {X,Z} and {Y,Z}.",
+        "Whatever the pivot is, one of the three cells must be Z: either the pivot itself, or the wing forced to Z.",
+        "So only a cell that sees all three (pivot and both wings) can lose Z. Such cells are usually in the pivot's box."
+      ],
+      "tip": "Look for three-candidate cells whose two-candidate neighbours fit inside them.",
+      "keyIdea": "Z goes in one of three cells, so a cell seeing all three isn't Z.",
+      "task": "Tap the cell that loses a candidate."
+    },
+    {
+      "id": "swordfish",
+      "level": 6,
+      "title": "Swordfish (and Jellyfish)",
+      "tech": "swordfish",
+      "summary": "An X-Wing expanded to three rows and three columns.",
+      "body": [
+        "Find three rows where a digit appears only in the same three columns (each row needs at least two of those positions).",
+        "The three rows need three copies of the digit, and they can't share a column. So they fill all three columns.",
+        "Remove the digit from every other cell in those three columns. The same works with rows and columns swapped.",
+        "The same idea with four rows is a Jellyfish. It's so rare that our generator didn't need one in 30,000 puzzles, but now you know what it looks like."
+      ],
+      "tip": "X-Wing, Swordfish and Jellyfish are all 'fish'. Find N lines covered by N cross-lines.",
+      "keyIdea": "N base lines covered by N cross-lines, so the cross-lines are used up.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "simple_coloring",
+      "level": 6,
+      "title": "Simple Coloring",
+      "tech": "simple_coloring",
+      "summary": "Colour a chain of either-or links, then find contradictions.",
+      "body": [
+        "Choose a digit. Wherever it has exactly two places in a unit, those two cells are a strong link: exactly one of them is the digit.",
+        "Chain these links together and colour the cells alternately green and blue. All greens are true, or all blues are true.",
+        "Trap: a cell outside the chain that sees a green and a blue can't be the digit, because one of those colours is true.",
+        "Wrap: if two cells of the same colour see each other, that colour must be false. Remove the digit from all of them."
+      ],
+      "tip": "Colouring is how you start thinking in chains, the core skill of grandmasters.",
+      "keyIdea": "One colour is true. Use it to find contradictions.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "unique_rectangle",
+      "level": 6,
+      "title": "Unique Rectangle",
+      "tech": "unique_rectangle",
+      "summary": "A proper Sudoku has one solution, so avoid patterns that would allow two.",
+      "body": [
+        "Imagine four cells forming a rectangle across exactly two boxes, all holding only {A,B}. The As and Bs could be swapped and the puzzle would still be valid, giving two solutions. This is called a deadly pattern.",
+        "A proper puzzle has exactly one solution, so this pattern can never happen.",
+        "If three corners are {A,B} and the fourth has A, B and more, the fourth corner can't be A or B. Remove them, and one of its other candidates must be true."
+      ],
+      "tip": "This only works on puzzles with a unique solution. Every puzzle in this app has one.",
+      "keyIdea": "Never allow a pattern that could be swapped.",
+      "task": "Tap the cell that loses candidates."
+    },
+    {
+      "id": "bug_plus_one",
+      "level": 6,
+      "title": "BUG+1",
+      "tech": "bug_plus_one",
+      "summary": "If every cell but one has two candidates, the extra one is the answer.",
+      "body": [
+        "BUG stands for Bivalue Universal Grave: a position where every unsolved cell has exactly two candidates. Such a position always has zero or several solutions, never exactly one.",
+        "If only one cell has three candidates, that cell's extra candidate is what prevents the BUG.",
+        "The extra candidate is the one that appears three times in the cell's row (and column and box). Place it."
+      ],
+      "tip": "When the board is nearly all pairs, check for BUG+1 before trying anything harder.",
+      "keyIdea": "The odd one out is the answer.",
+      "task": "Tap the cell you can solve."
+    },
+    {
+      "id": "xy_chain",
+      "level": 7,
+      "title": "XY-Chain",
+      "tech": "xy_chain",
+      "summary": "A chain of two-candidate cells whose two ends can't both be wrong.",
+      "body": [
+        "An XY-Chain is a path of two-candidate cells, each seeing the next, where neighbouring cells share a digit.",
+        "Start at a cell with {X,A} and suppose it's not X, so it's A. The next cell shares A, so it becomes its other digit, and so on along the chain.",
+        "If the last cell is forced to X, then either the first cell is X or the last cell is X.",
+        "Any cell that sees both ends can't be X. An XY-Wing is simply the shortest XY-Chain: three cells."
+      ],
+      "tip": "Grandmasters read chains like sentences: \"If this is not X, then ... then ... so that is X\".",
+      "keyIdea": "One end or the other is X, so a cell seeing both ends isn't X.",
+      "task": "Tap a cell that loses a candidate."
+    },
+    {
+      "id": "mastery",
+      "level": 7,
+      "title": "The Grandmaster Routine",
+      "tech": null,
+      "summary": "Put it all together: a fast, systematic solving routine.",
+      "body": [
+        "1. Scan for singles with cross-hatching, one digit at a time, 1 to 9. Repeat until nothing more appears.",
+        "2. Fill in all candidates (or use Auto Notes) and check for naked singles.",
+        "3. For each box and line, look for pointing and claiming.",
+        "4. Look for pairs, then triples: naked first, then hidden.",
+        "5. Look at each digit on its own: X-Wing, Skyscraper, 2-String Kite, Swordfish, Colouring.",
+        "6. Look at two-candidate cells: XY-Wing, XYZ-Wing, Unique Rectangles, BUG+1, XY-Chains.",
+        "7. After every removal, go back to step 1. Advanced moves usually unlock simple ones.",
+        "Grandmasters aren't faster because they know secret tricks. They're faster because they apply simple tricks without missing any."
+      ],
+      "tip": "Use Hints to check your thinking, not to replace it. Each hint names the technique, so you always know which lesson to revisit.",
+      "keyIdea": "Always try the simple techniques first."
+    }
+  ]
+}

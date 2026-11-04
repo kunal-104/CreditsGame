@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sudoku Sensei</title>
+  <meta name="description" content="Play Sudoku and learn it step by step, from your first digit to grandmaster techniques. Every hint explains the logic.">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn" id="backBtn" aria-label="Back" hidden>
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <a class="brand" href="#/">Sudoku <b>Sensei</b></a>
+    <span class="spacer"></span>
+    <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+      <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+  </header>
+  <main id="view" tabindex="-1"></main>
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" hidden></div>
+  <noscript>Sudoku Sensei needs JavaScript to run.</noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
