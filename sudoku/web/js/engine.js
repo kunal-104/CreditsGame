@@ -184,6 +184,7 @@ export const TECHNIQUES = {
   bug_plus_one: { name: 'BUG+1', level: 6 },
   xy_chain: { name: 'XY-Chain', level: 7 },
   jellyfish: { name: 'Jellyfish', level: 7 },
+  reveal: { name: 'Reveal a Cell', level: 0 },
 };
 
 export const LEVELS = [
@@ -749,8 +750,20 @@ export function hint(grid, solution) {
     if (step.places.length) return { kind: 'steps', steps };
     applyStep(s, step);
   }
-  if (steps.length) return { kind: 'steps', steps };
-  return { kind: 'stuck' };
+  // No technique applies from here (placements can destroy patterns an earlier
+  // deduction relied on). Reveal the most constrained empty cell instead.
+  let best = -1;
+  for (let i = 0; i < 81; i++) if (!s.grid[i] && (best < 0 || popcount(s.cand[i]) < popcount(s.cand[best]))) best = i;
+  if (best < 0) return { kind: 'stuck' };
+  const d = solution[best];
+  steps.push({
+    state: cloneState(s),
+    step: mkStep('reveal', {
+      places: [[best, d]], cells: [best], units: CELL_UNITS[best],
+      text: `None of the Academy techniques applies from this position. That can happen when digits placed earlier break up the patterns an advanced deduction relied on. Here's one cell from the solution to get you moving: ${cellName(best)} = ${d}.`,
+    }),
+  });
+  return { kind: 'steps', steps };
 }
 
 // ---------- transforms (make each bank puzzle feel brand new) ----------

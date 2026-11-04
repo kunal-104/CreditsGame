@@ -399,7 +399,7 @@ function renderGame() {
     const data = E.hint(game.grid, game.solution.split('').map(Number));
     if (data.kind === 'solved') return;
     if (data.kind === 'stuck') return toast('No logical step found');
-    hintState = { data, i: 0, reveal: false };
+    hintState = { data, i: 0, reveal: data.kind === 'steps' && data.steps[0].step.tech === 'reveal' };
     if (data.kind === 'steps') { game.hints++; saveGame(); }
     renderHint();
     draw();
