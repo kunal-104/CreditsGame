@@ -1,0 +1,12 @@
+{
+  "name": "Blockora: Block Puzzle",
+  "short_name": "Blockora",
+  "description": "Drop pieces on a 9×9 grid and clear rows, columns and 3×3 squares.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1b1640",
+  "theme_color": "#1b1640",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
