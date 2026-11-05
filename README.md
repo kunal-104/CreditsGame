@@ -30,3 +30,11 @@ cd facts/app && flutter pub get && flutter run
 ```
 
 See each product's README for how the content is generated.
+
+## Blockora (block puzzle)
+
+| Website | Flutter app |
+|---|---|
+| [`blocks/web`](blocks/web) | [`blocks/app`](blocks/app) |
+
+Drop pieces on a 9×9 grid and clear rows, columns and 3×3 squares. Includes combos, a daily challenge (identical on web and app), one shuffle per game, achievements and 4 themes. Logic tests: `node blocks/tools/test-logic.mjs` and `cd blocks/app && flutter test`.
